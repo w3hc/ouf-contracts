@@ -1,6 +1,8 @@
-# W3HC Hardhat Template
+# OUF Governance Token
 
-A comprehensive Solidity contract development environment using Hardhat.
+Governance Token of OUF (OUr Friendly assistant).
+
+Ouf UI repo: https://github.com/w3hc/ouf 
 
 ## Features
 
@@ -14,24 +16,14 @@ A comprehensive Solidity contract development environment using Hardhat.
 
 | Network | Chain ID | Documentation |
 |---------|----------|---------------|
-| Optimism Mainnet | 10 | [Documentation](https://docs.optimism.io/chain/networks#op-mainnet) |
-| Base Mainnet | 8453 | [Documentation](https://docs.base.org/docs/network-information#base-mainnet) |
 | Arbitrum One | 42161 | [Documentation](https://docs.arbitrum.io/welcome/get-started) |
-| Sepolia Testnet | 11155111 | [Documentation](https://ethereum.org/nb/developers/docs/networks/#sepolia) |
-| OP Sepolia Testnet | 11155420 | [Documentation](https://docs.optimism.io/chain/networks#op-sepolia) |
-| Base Sepolia Testnet | 84532 | [Documentation](https://docs.base.org/docs/network-information/#base-testnet-sepolia) |
 | Arbitrum Sepolia | 421614 | [Documentation](https://docs.arbitrum.io/welcome/get-started) |
 
 ## Contract Verification
 
 | Network | Explorer URL | API URL | API Key Variable |
 |---------|--------------|---------|-----------------|
-| Optimism | https://optimistic.etherscan.io | https://api-optimistic.etherscan.io/api | OP_ETHERSCAN_API_KEY |
-| Base | https://basescan.org | https://api.basescan.org/api | BASE_ETHERSCAN_API_KEY |
 | Arbitrum One | https://arbiscan.io | https://api.arbiscan.io/api | ARBITRUM_ETHERSCAN_API_KEY |
-| Sepolia | https://sepolia.etherscan.io | https://api-sepolia.etherscan.io/api | ETHERSCAN_API_KEY |
-| OP Sepolia | https://sepolia-optimism.etherscan.io | https://api-sepolia-optimistic.etherscan.io/api | OP_ETHERSCAN_API_KEY |
-| Base Sepolia | https://sepolia.basescan.org | https://api-sepolia.basescan.org/api | BASE_ETHERSCAN_API_KEY |
 | Arbitrum Sepolia | https://sepolia.arbiscan.io | https://api-sepolia.arbiscan.io/api | ARBITRUM_ETHERSCAN_API_KEY |
 
 ### Manual Contract Verification
@@ -41,7 +33,7 @@ npx hardhat verify --network <NETWORK_NAME> <CONTRACT_ADDRESS> "1000000000000000
 ```
 
 Where:
-- `<NETWORK_NAME>`: `optimism`, `base`, `arbitrum`, `sepolia`, `op-sepolia`, `base-sepolia`, `arbitrum-sepolia`
+- `<NETWORK_NAME>`: `arbitrum`, `arbitrum-sepolia`
 - `<CONTRACT_ADDRESS>`: The address where your contract was deployed
 
 ## Installation
@@ -73,7 +65,7 @@ Deploy to supported networks:
 ```bash
 pnpm deploy:<network>
 ```
-Supported values for `<network>`: `optimism`, `base`, `arbitrum`, `sepolia`, `op-sepolia`, `base-sepolia`, `arbitrum-sepolia`
+Supported values for `<network>`: `arbitrum`, `arbitrum-sepolia`
 
 ### Network Operations
 

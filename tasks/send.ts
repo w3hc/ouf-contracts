@@ -10,20 +10,21 @@ task("send", "Send a given amount of tokens to a given address")
     .setAction(async (args, hre) => {
         const ethers = hre.ethers
         const [signer] = await ethers.getSigners()
-        const Basic = await ethers.getContractFactory("Basic")
+        const OufGovernanceToken =
+            await ethers.getContractFactory("OufGovernanceToken")
 
         const deploymentPath = path.join(
             __dirname,
             "..",
             "deployments",
             hre.network.name,
-            "Basic.json"
+            "OufGovernanceToken.json"
         )
 
         if (!fs.existsSync(deploymentPath)) {
             console.log(
                 error(
-                    `\nCan't find a deployed instance of Basic ERC-20 on ${hre.network.name}`
+                    `\nCan't find a deployed instance of OufGovernanceToken ERC-20 on ${hre.network.name}`
                 ),
                 "\nTry deploying it first with:",
                 msg(`\npnpm deploy:${hre.network.name}`)
@@ -36,7 +37,11 @@ task("send", "Send a given amount of tokens to a given address")
         )
         const addr = deploymentData.address
 
-        const erc20 = new ethers.Contract(addr, Basic.interface, signer)
+        const erc20 = new ethers.Contract(
+            addr,
+            OufGovernanceToken.interface,
+            signer
+        )
         const mint = await erc20.transfer(
             args.wallet,
             await ethers.parseEther(args.amount)
